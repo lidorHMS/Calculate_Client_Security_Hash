@@ -1,0 +1,168 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Get_Relevant_Client_Data" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="recordId" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>540,1286</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Get_Relevant_Client_Data_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="34">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Get_Relevant_Client_Data" sap:VirtualizedContainerService.HintSize="476,1221.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="id" />
+      <Variable x:TypeArguments="x:String" Name="name" />
+      <Variable x:TypeArguments="x:String" Name="country" />
+      <Variable x:TypeArguments="x:String" Name="temp" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Browser Chrome: ACME System 1 - Work Items" sap:VirtualizedContainerService.HintSize="434,975.333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="518f9487-f2fe-4a6b-a309-89b27a23a118" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,757.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NGetText DisplayName="Get Text 'Client Information'" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="518f9487-f2fe-4a6b-a309-89b27a23a118" Version="V1">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/work-items/85274288" DesignTimeRectangle="255, 664, 560, 90" ElementType="Text" FriendlyName="'Client ID:'" FullSelectorArgument="&lt;webctrl tag='P' /&gt;" FuzzySelectorArgument="[String.Format(&quot;&lt;webctrl tag='P' type='' class='' aaname='*{0}*' /&gt;&quot;, recordId)]" Guid="686b2159-4f2f-4b8b-9bad-87472c5bab2e" ImageBase64="" InformativeScreenshot="c28db2e1f6b358454c3c7a01d30b1573.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Work Items' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="255, 619, 560, 30" ElementType="Text" FriendlyName="'Client Information'" FullSelectorArgument="&lt;webctrl tag='H4' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H4' type='' class='' aaname='Client Information Details' check:innerText='Client Information Details' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+              <uix:NGetText.Text>
+                <OutArgument x:TypeArguments="x:String">[temp]</OutArgument>
+              </uix:NGetText.Text>
+            </uix:NGetText>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[temp]" />
+            <ui:InvokeCode ContinueOnError="{x:Null}" Code="&#xA;str=str.Substring(str.indexOf(&quot;:&quot;)+1)&#xA;id2=str.Substring(0,str.indexOf(&quot;Client&quot;))&#xA;&#xA;str=str.Substring(str.indexOf(&quot;:&quot;)+1)&#xA;name2=str.Substring(0,str.indexOf(&quot;Client&quot;))&#xA;&#xA;str=str.Substring(str.indexOf(&quot;:&quot;)+1)&#xA;country2=str&#xA;&#xA;Console.WriteLine(&quot;id=&quot;+id2+&quot; name=&quot;+name2+&quot; country= &quot;+country2)&#xA;" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="334,164" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+              <ui:InvokeCode.Arguments>
+                <InOutArgument x:TypeArguments="x:String" x:Key="id2">
+                  <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="ID" />
+                </InOutArgument>
+                <InOutArgument x:TypeArguments="x:String" x:Key="name2">
+                  <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="name" />
+                </InOutArgument>
+                <InOutArgument x:TypeArguments="x:String" x:Key="country2">
+                  <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="country" />
+                </InOutArgument>
+                <InOutArgument x:TypeArguments="x:String" x:Key="str">
+                  <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="temp" />
+                </InOutArgument>
+              </ui:InvokeCode.Arguments>
+            </ui:InvokeCode>
+            <uix:NClick ClickType="Single" DisplayName="Click 'Back'" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="518f9487-f2fe-4a6b-a309-89b27a23a118" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="11, 68, 54, 42" ElementType="Button" FriendlyName="'Back'" FullSelectorArgument="&lt;ctrl name='ACME System 1 - Work Items - Google Chrome - Lidor' role='pane' /&gt;&lt;ctrl name='Google Chrome' role='pane' /&gt;&lt;ctrl name='Back' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='ACME System 1 - Work Items - Google Chrome - Lidor' role='pane' /&gt;&lt;ctrl name='Google Chrome' role='pane' /&gt;&lt;ctrl name='Back' role='push button' automationid='' check:text='Back' /&gt;" Guid="45d953ac-d18b-4b74-8b0d-ce4c95b4680b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADoAAAAuCAYAAAB5/AqlAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAFFSURBVGhD7da9DcIwEIZhBskETMAEbMAgTMAEYQ0aKprQ0AYaKmACaGj4aWkMX/QFpbAEiuw76XQnvUVkK9ZTRPGgnfCZw3weFkVhMjIdaiYyHWomMh1qJjIdaiYyHWomMh1qJjJ1odV4HK51HTaTSXQ9RWTqQYF8PR44Ply32+ieFJGpA+0iX89n8xzblyIy5aGSSESmLFQaiciUg2ogEZkyUC0kIjM/VBOJyMwLXY1GXyTmXFXhUJa9wrtiZ/yKzLzQy3rdAFMM3hU741dk5oXixtOd++nUXA761Pf2RGb+b3Q3nTZIzO14DMvhMLovV2TmhyJNLJkyUKSFJVMOijSwZMpCkTSWTHkoksSSqQNFXWzff+Q/kakHRS12P5tF11NEpi5UIjIdaiYyHWomMh1qJjIdaiYyHWomMh1qJjKtQ4vwBv2sIhQ3uLoBAAAAAElFTkSuQmCC" InformativeScreenshot="d92c5b76a9c62f27f5d414d54d957fb5.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='ACME System 1 - Work Items - Google Chrome' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-11, -11, 1942, 1042" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAReSURBVFhHvZdtbFNlFMcf3SxUfI0miLAEWdShCV+EGD9oUJBJAobwQb8IGklkKEQkcy8MZK90tGsnZbxsvkDmxsYkS8QFPhDYLIy+sbv2rhW3dYPFbGyVbYwJJMu2wzm3Prd317ZCc+uHf9vnPC/n13PPc57nMrZX6EPdQo39zyKf1wgAZJWQ2sJtzYVrkw+lDT9G5UbBZWB5TmC7XIlRHgnXJ4hSyecwAYwxAzawM/1EoKFSvLEh97eBjOw4xedmNg9k7LSFRO2sloEMg2Po0x3n+4tYMUaiUIr0SAiAiL5xwfrGqyvSt69hiZZuXzv6cwP+cQVAoRveqQtsizRBS33vHV6cTAD5agA0rG7o+SLSpHg0ODG9aGlFR+vy+kCl0l4p3HgpKkC6RgAA8GxSqQfY5zZgm22wq3XwFO+zOIeiA6z5OQyQctBXpTd6BdwZwrsNPVZuV2vJD3/YWOFl9xNmr5hULGwiW8v1OxvZpmZg5SKw7a2Y8e3Ax5c5g9EB1p4MA+hNnjssH7dlth2WHusMcrta8yt8wHLswIpwbEHbUW5P/e4KsK0XJDX2jBVw+30DPGkR7awIt8pOJ7xR03WO29VadNg/Ke1tLDJPfyvuUfbtbu5fn+MIvqK0HYmVAzMAzKJTAdCsXEQpBJimMQQwx+TNjzRm6PbUQ/x3lWc4cQC60nYZYOEhP+jxsTxqbAfMp3JurxZHNAY44p/iAHpFBB63eIF9jbmBJVhn9Bi5vdanPYAcASUA/mtgu7H24+H2nLVDttdoDZAaBWAB7Q4CwLo/d38cAE9Z7hsg4iOIC+B9BcDsfR6XdGrhFltW3XWe29VKq/JPSAAGHFsiyPs9LgBlJcQk8mGFA5ZlhxX1gTPcrlbKobCjOWavidvjAnjreEAG+Ph03yn21SVgmZfg9druAW5XK9mI2Y5HOct2gFUIbuH25w/EAfBmTRjgqH9ks1RK6VDBx9B5a+IF3sc1DbCE5TqoBEvb7drfE/N431xrx4MDrKwPA5D0Zeg8FxehwXvckHfh+icmVzCt7vfRxTkt/VmMzopinLv1IrxW03VTOTdaBKpjAbynOo6b/hzfwj46hxmO/ZQPGGZdGYac2plYZOgOSU4+s8HoFKxSzk2hHKBHg3VgntUnnxExI6AGIH3Y1NfGdmAufInHKk2ik48umBgRsusK3LDhbL9c6biYAZ1suyglMUbpILfX+R8QgNTUO77sg8beX58xeuAxrO3JeL7Pt4jjG3+5+lPf3UldpDlvH+++mXqgY/LlSj8srw1kcfsxMcZhFA1ASx0WYgDglSzhl9IfPcNpUQHwUro20iStNQsf47+v5ZjN6072lpy4Mrqw3BV81eSYKSPKjCq1D0ptc4Qx/6UK4a8XjY6hdcmUoJi86FsCCL2aIUQSdszGRHsYvylMWusRFNuLotoReh2UXs1CDXpXo9cl2l5ElwjxtblPEn50o0ZQQUmGf74ToZlro0+h8x4tMHhuvyezngAAAABJRU5ErkJggg==" InformativeScreenshot="aa6962aecbdb08749bd3e669bfa90133.png" Selector="&lt;html app='chrome.exe' title='ACME System 1 - Work Items' /&gt;" Url="[&quot;https://acme-test.uipath.com/work-items/&quot;+recordId.ToString]" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Get_Hash.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="COUNTRY">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="country" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="NAME">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="name" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="RECORD_ID">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="recordId" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="USER_ID">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="id" />
+        </InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+  </Sequence>
+</Activity>
